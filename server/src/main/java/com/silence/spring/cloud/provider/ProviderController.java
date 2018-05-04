@@ -1,5 +1,6 @@
 package com.silence.spring.cloud.provider;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,10 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ProviderController {
 
+    @Value("${server.port}")
+    private String servicePort;
+
     @RequestMapping("/getInfo")
     public String getInfo() {
 
-        return "provider";
+        return servicePort;
 
     }
 
