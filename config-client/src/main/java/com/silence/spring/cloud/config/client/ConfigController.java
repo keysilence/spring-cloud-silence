@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ConfigController {
 
-    @Value("${userName}")
-    private String userName;
+    @Value("${test.hello}")
+    private String testString;
 
-    @RequestMapping("/getUserName")
+    @RequestMapping("/test")
     @ResponseBody
-    public String getUserName() {
+    public String testString() {
 
-        return userName;
+        return testString;
 
     }
 
