@@ -15,7 +15,6 @@
         <module>zuul</module>
         <module>config-server</module>
         <module>config-client</module>
-        <module>config-file</module>
     </modules>
     <name>spring-cloud-silence</name>
 
