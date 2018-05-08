@@ -6,3 +6,6 @@
 
 # 端口
 9999
+
+# 访问
+http://localhost:9999/getInfo
