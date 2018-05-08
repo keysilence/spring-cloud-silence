@@ -5,4 +5,4 @@
 7777
 
 # 访问
-http://localhost:7000/printInfo
+http://localhost:7777/printInfo

@@ -1,0 +1,18 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8762/eureka/
+server:
+  port: 7766
+spring:
+  application:
+    name: feign-client
+feignInterface:
+  ribbon:
+    ReadTimeout: 0
+    ConnectTimeout: 0
+    MaxAutoRetries: 0
+    MaxAutoRetriesNextServer: 0
+    OkToRetryOnAllOperations: false
+    eureka:
+      enabled: false
