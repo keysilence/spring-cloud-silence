@@ -7,15 +7,6 @@ server:
 spring:
   application:
     name: feign-client
-#feignInterface:
-#  ribbon:
-#    ReadTimeout: 0
-#    ConnectTimeout: 0
-#    MaxAutoRetries: 0
-#    MaxAutoRetriesNextServer: 0
-#    OkToRetryOnAllOperations: false
-#    eureka:
-#      enabled: false
 feign:
   hystrix:
     enabled: true
