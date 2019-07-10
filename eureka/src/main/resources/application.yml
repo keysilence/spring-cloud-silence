@@ -1,10 +1,41 @@
+# 如下为多节点Eureka Server的配置方式
+# 使用连字符（---）将yml文件分为三段
+spring:
+  application:
+    name: eureka-ha
+eureka:
+  client:
+    # 设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址。默认为http://localhost:8761/eureka；多个地址间使用,分隔
+    serviceUrl:
+      defaultZone: http://localhost:8762/eureka,http://localhost:8761/eureka
+---
+spring:
+  profiles: peer1
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost
+---
+spring:
+  profiles: peer2
 server:
   port: 8762
 eureka:
   instance:
     hostname: localhost
-  client:
-    registerWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+# 如下为单节点Eureka Server的配置方式
+#server:
+#  port: 8762
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#    # 表示是否将自己注册到Eureka Server，默认为true。由于当前应用就是Eureka Server（单节点），故而设为false
+#    registerWithEureka: false
+#    # 表示是否从Eureka Server获取注册信息，默认为true。因为这是一个单点的Eureka Server（单节点），不需要同步其他的Eureka Server节点的数据，故而设为false
+#    fetchRegistry: false
+#    # 设置与Eureka Server交互的地址，查询服务和注册服务都需要依赖这个地址。默认为http://localhost:8761/eureka；多个地址间使用,分隔
+#    serviceUrl:
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
