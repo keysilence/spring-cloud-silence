@@ -39,6 +39,7 @@
         </dependency>
     </dependencies>
     <dependencyManagement>
+        <!-- 此处只是规定了引入的spring-cloud相关jar包的版本 -->
         <dependencies>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
