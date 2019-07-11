@@ -7,7 +7,7 @@ eureka:
 # virtual-host-name默认跟spring.application.name一致
 server:
   port:
-    9999
+    9998
 spring:
   application:
     name: microservice-provider

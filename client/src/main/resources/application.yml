@@ -8,3 +8,20 @@ server:
 spring:
   application:
     name: consumer
+
+# 可以通过如下配置为microservice-provider服务的Ribbon Client的负载均衡规则设为随机，通@RibbonClient(name="microservice-provider", configuration = RibbonConfiguration.class)
+#microservice-provider:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+# 可以通过如下配置为所有Ribbon Client都使用RandomRule
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+# Ribbon本身也可以脱离Eureka而单独使用，如果想脱离Eureka单独使用Ribbon，必须配置ribbon.eureka.enabled=false，并注释掉eureka.client.serviceUrl.defaultZone配置如下
+#microservice-provider:
+#  ribbon:
+#    listOfServers: localhost:9999,localhost:9998
+#ribbon:
+#  eureka:
+#    enabled: false

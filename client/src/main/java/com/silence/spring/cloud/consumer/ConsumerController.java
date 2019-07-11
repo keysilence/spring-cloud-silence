@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
  * 手动指定负载均衡策略@RibbonClient(name="consumer", configuration = RibbonConfiguration.class)
  */
 @RestController
-@RibbonClient(name="consumer", configuration = RibbonConfiguration.class)
+@RibbonClient(name="microservice-provider", configuration = RibbonConfiguration.class)
 public class ConsumerController {
 
     @Autowired
