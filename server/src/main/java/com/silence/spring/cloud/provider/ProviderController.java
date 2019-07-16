@@ -13,6 +13,19 @@ public class ProviderController {
     @Value("${server.port}")
     private String servicePort;
 
+    @RequestMapping("/printInfo")
+    public String printInfo() {
+
+//        try {
+//            Thread.sleep(2000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+        System.out.println("It`s me!");
+        return "It`s me!";
+
+    }
+
     @RequestMapping("/getInfo")
     public String getInfo() {
 

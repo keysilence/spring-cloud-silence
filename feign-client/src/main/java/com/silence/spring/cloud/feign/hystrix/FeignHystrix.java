@@ -10,6 +10,11 @@ import org.springframework.stereotype.Component;
 public class FeignHystrix implements FeignInterface {
 
     @Override
+    public String printInfo() {
+        return "Print Info Error!Hystrix!";
+    }
+
+    @Override
     public String getInfo() {
 
         return "Get Info Error!Hystrix!";
