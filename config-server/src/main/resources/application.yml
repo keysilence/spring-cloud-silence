@@ -5,8 +5,9 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/keysilence/spring-cloud-silence.git
-          searchPaths: config-file
+          uri: https://source.enncloud.cn/dev.laikang.com/diviner-config-server.git
+          username:
+#          searchPaths: config-file
     label: master
 server:
   port: 7788

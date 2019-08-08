@@ -4,7 +4,12 @@ spring:
   cloud:
     config:
       label: master
-      profile: prod
+      profile: test
       uri: http://localhost:7788/
 server:
   port: 7799
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
